@@ -8,15 +8,15 @@
 
 path=$1
 shift
-commit=$(dirname $path)
+commit=$(basename $path)
 echo "$path $commit"
 
 GIT_BASE=$(git rev-parse --show-toplevel)
 
 cd $GIT_BASE
 
-git add -A
+git add $path
 git commit -m "Auto generated commit related to: $commit"
-git push origin master > /dev/null
+git push origin master 2>&1 > /dev/null
 
 echo "Successfully pushed."
