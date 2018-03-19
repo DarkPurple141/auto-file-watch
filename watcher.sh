@@ -29,7 +29,6 @@ previous_sha=$sha
 # runs the command passed in
 build() {
   echo -en " building...\n\n"
-  echo "$cmd $path"
   $cmd "$path"
   echo -en "\n--> resumed watching."
 }
@@ -48,7 +47,7 @@ compare() {
 #trap build SIGINT
 #trap exit SIGQUIT
 
-echo -e  "--> Press Ctrl+C to force build, Ctrl+\\ to exit."
+echo -e  "--> Press Ctrl+C Exit, or via kill PID."
 echo -en "--> watching \"$path\"."
 while true; do
   compare
