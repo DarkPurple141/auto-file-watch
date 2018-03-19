@@ -9,7 +9,7 @@
 path=$1
 shift
 commit=$(basename $path)
-echo "$path" "$commit"
+echo "$path $commit"
 
 GIT_BASE=$(git rev-parse --show-toplevel)
 
