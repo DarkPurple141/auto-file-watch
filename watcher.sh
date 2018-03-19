@@ -30,7 +30,7 @@ previous_sha=$sha
 build() {
   echo -en " building...\n\n"
   echo "$cmd $path"
-  $($cmd $path)
+  $($cmd "$path")
   echo -en "\n--> resumed watching."
 }
 
