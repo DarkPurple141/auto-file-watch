@@ -29,6 +29,7 @@ previous_sha=$sha
 # runs the command passed in
 build() {
   echo -en " building...\n\n"
+  echo "$cmd $path"
   $($cmd $path)
   echo -en "\n--> resumed watching."
 }
