@@ -15,7 +15,7 @@ GIT_BASE=$(git rev-parse --show-toplevel)
 cd $GIT_BASE
 
 git add $path
-git commit -m "Auto generated commit related to: $commit"
+git commit -m "Auto generated commit related to: $commit" --quiet
 git push origin master --quiet
 
 echo "Successfully pushed."
