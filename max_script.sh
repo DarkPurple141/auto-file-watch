@@ -19,7 +19,7 @@ sha=0
 
 # recursive calls sha on all files in path
 update_sha() {
-  sha=`ls -lRT $path | shasum`
+  sha=$(ls -lRT $path | shasum)
 }
 update_sha
 previous_sha=$sha
