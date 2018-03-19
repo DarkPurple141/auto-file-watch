@@ -14,6 +14,8 @@
 
 path=$1
 shift
+UPDATE_INTERVAL=$1
+shift
 cmd=$*
 sha=0
 
@@ -27,7 +29,7 @@ previous_sha=$sha
 # runs the command passed in
 build() {
   echo -en " building...\n\n"
-  $cmd
+  $($cmd $path)
   echo -en "\n--> resumed watching."
 }
 
@@ -49,5 +51,5 @@ echo -e  "--> Press Ctrl+C to force build, Ctrl+\\ to exit."
 echo -en "--> watching \"$path\"."
 while true; do
   compare
-  sleep 1
+  sleep $UPDATE_INTERVAL
 done
